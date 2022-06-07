@@ -14,18 +14,17 @@ class AbonneFactory extends Factory
      * @return array
      */
 
-
-     protected $model = Abonne::class;
+    protected $model = Abonne::class;
 
     public function definition()
     {
         return [
-            'nom' => $this->faker->name,
-            'prenom' => $this->faker->lastName,
+            'nom' => $this->faker->lastName,
+            'prenom' => $this->faker->name,
+            'abonnement_fin' => $this->faker->date,
             'telephone' => $this->faker->phoneNumber,
             'email' => $this->faker->email,
-            'photo' => $this->faker->image($dir ='' ,$width = 640, $height = 480),
-
+            'photo' => $this->faker->imageUrl()
         ];
     }
 }

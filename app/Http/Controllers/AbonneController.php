@@ -41,7 +41,7 @@ class AbonneController extends Controller
         $this->validate($request, [
             "nom" => "bail|required|string|max:200",
             "prenom" => "bail|required|string|max:256",
-            "abonnement_fin" => "bail|required",
+            "abonnement_fin" => "bail|required|date",
             "telephone" => "bail|required|unique:abonnes|max:26",
             "email" => "bail|required|string|unique:abonnes|max:256",
             "photo" => "bail|image|required|max:1024"
@@ -97,7 +97,7 @@ class AbonneController extends Controller
         $rules = [
             "nom" => "bail|required|string|max:200",
             "prenom" => "bail|required|string|max:256",
-            "abonnement_fin" => "bail|required",
+            "abonnement_fin" => "bail|required|date",
             "telephone" => "bail|required|max:26",
             "email" => "bail|required|string|max:256"
         ];

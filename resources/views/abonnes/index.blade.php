@@ -11,7 +11,7 @@
 
             <div class="uk-card uk-background-muted uk-card-small uk-card-body uk-card-hover">
                 <div class="uk-flex">
-                    <img class="uk-border-circle uk-align-center round" width="190" height="190" src="{{ @str_starts_with('http', $abonne->photo) ? $abonne->photo : asset('storage/' .$abonne->photo)}}">
+                    <img class="uk-border-circle uk-align-center round" width="190" height="190" src="{{ @str_starts_with($abonne->photo, 'https://') ? $abonne->photo : asset('storage/' .$abonne->photo)}}">
                     <button class="uk-button uk-badge" type="button">Options</button>
                     <div uk-dropdown="mode: click">
                         <ul class="uk-nav uk-dropdown-nav">
@@ -21,7 +21,7 @@
                             </li>
                             <hr class="uk-divider">
                             <li>
-                                <form action="{{ route('abonne.destroy', $abonne) }}" method="post" class="uk-align-left">
+                                <form action="{{ route('abonne.destroy', $abonne) }}" method="post" class="uk-align-left" onsubmit="return cnf()">
 
                                     @csrf
                                     @method("DELETE")
@@ -67,5 +67,16 @@
     </div>
 </div>
 <a class="uk-button uk-button-large uk-position-small uk-position-bottom-right" href="#add" uk-scroll style="position:fixed !important;" uk-icon="plus">Ajout</a>
+
+<script>
+    function cnf() {
+        let ret = confirm("Voulez vous retirer cet abonne de la liste ? ");
+        if (ret) {
+            return true;
+        }
+        return false;
+    }
+</script>
+
 
 @endsection

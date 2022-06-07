@@ -48,7 +48,7 @@
                 <div class="uk-margin-small">
                     <div class="uk-inline">
                         <span class="uk-form-icon" uk-icon="icon: receiver"></span>
-                        <input type="tel" class="uk-input" id="telephone" name="telephone" placeholder="telephone" value="{{ isset($abonne) ? $abonne->telephone : old('telephone') }}" pattern="[0-9]{8}">
+                        <input type="tel" class="uk-input" id="telephone" name="telephone" placeholder="telephone" value="{{ isset($abonne) ? $abonne->telephone : old('telephone') }}">
                     </div>
                     @error('telephone')
                     <p> {{ $message }}</p>
