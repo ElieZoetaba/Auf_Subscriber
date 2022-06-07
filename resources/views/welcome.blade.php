@@ -81,7 +81,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
+                                    Laravel of the latest and most important news in the Laravel ecosystem, including new package releases an tutorials.
                                 </div>
                             </div>
                         </div>
